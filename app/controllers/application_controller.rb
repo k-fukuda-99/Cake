@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     if customer_signed_in?
         root_path
     else
-       admin_orders_path
+        admin_homes_top_path
     end
   end
 
@@ -17,11 +17,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up,
                                         keys: [:last_name, :first_name, :last_name_kana, :email,
-                                                :first_name_kana, :postcode, :city, :phone_number ])
+                                                :first_name_kana, :post_code, :address, :telphone_number ])
   end
 
 end
