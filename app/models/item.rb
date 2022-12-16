@@ -17,6 +17,6 @@ class Item < ApplicationRecord
 
   validates :introduction, presence: true
   validates :name, presence: true
+  validates :genre, presence: true
   validates :price, presence: true, numericality: { only_integer: true }
-  validates :is_active, inclusion: {in: [true, false]}
 end
